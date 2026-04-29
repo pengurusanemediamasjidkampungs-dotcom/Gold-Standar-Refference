@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRO IDE - Reference System</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <nav class="command-center">
+        <div class="brand-group">
+            <span class="logo">PRO IDE</span>
+            <span class="version-tag">v2.1</span>
+        </div>
+        <div class="control-groups">
+            <button class="primary" onclick="runEngine()">RUN ENGINE</button>
+        </div>
+    </nav>
+
+    <main class="workspace-grid">
+        <aside class="activity-bar">
+            <div class="top-icons">
+                <button title="Explorer" class="active">📁</button>
+                <button title="Search">🔍</button>
+            </div>
+            <div class="bottom-icons">
+                <button title="Settings">⚙️</button>
+            </div>
+        </aside>
+
+        <section class="editor-stack">
+            <header class="tab-system">
+                <div class="tab active">index.html</div>
+                <div class="tab">style.css</div>
+            </header>
+            <div class="editor-surface">
+                <textarea id="code-editor" spellcheck="false" placeholder="Tulis kod di sini..."></textarea>
+            </div>
+        </section>
+
+        <section class="preview-pane">
+            <header class="preview-header">
+                <span>PREVIEW</span>
+                <div class="device-toggles">
+                    <button class="active">🖥️</button>
+                    <button>📱</button>
+                </div>
+            </header>
+            <div class="iframe-wrapper">
+                <iframe id="output-frame"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="status-bar">
+        <div class="left-metrics">
+            <span>Ln 1, Col 1</span>
+            <span>UTF-8</span>
+        </div>
+        <div class="right-metrics">
+            <span>AI: OFFLINE (Ollama)</span>
+            <span class="badge">PRO</span>
+        </div>
+    </footer>
+
+</body>
+</html>
