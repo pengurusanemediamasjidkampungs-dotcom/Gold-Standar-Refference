@@ -3,66 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRO IDE - Reference System</title>
-    <link rel="stylesheet" href="css/main.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PRO IDE | Sovereign Developer Edition</title>
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <nav class="command-center">
         <div class="brand-group">
             <span class="logo">PRO IDE</span>
-            <span class="version-tag">v2.1</span>
+            <span class="version-tag">v2.1 Gold Standard</span>
         </div>
+        
         <div class="control-groups">
-            <button class="primary" onclick="runEngine()">RUN ENGINE</button>
+            <button class="btn-utility" title="New File">📄</button>
+            <button class="btn-utility" title="Save Project">💾</button>
+            <div class="divider"></div>
+            <button class="primary" id="run-btn" onclick="runEngine()">RUN ENGINE</button>
         </div>
     </nav>
 
     <main class="workspace-grid">
+        
         <aside class="activity-bar">
             <div class="top-icons">
                 <button title="Explorer" class="active">📁</button>
-                <button title="Search">🔍</button>
+                <button title="Search (Coming Soon)">🔍</button>
+                <button title="AI Oracle (Local)">🤖</button>
             </div>
             <div class="bottom-icons">
-                <button title="Settings">⚙️</button>
+                <button title="System Settings">⚙️</button>
             </div>
         </aside>
 
         <section class="editor-stack">
             <header class="tab-system">
-                <div class="tab active">index.html</div>
-                <div class="tab">style.css</div>
+                <div class="tab active" data-file="index.html">index.html</div>
+                <div class="tab" data-file="style.css">style.css</div>
+                <div class="tab" data-file="script.js">script.js</div>
             </header>
+            
             <div class="editor-surface">
-                <textarea id="code-editor" spellcheck="false" placeholder="Tulis kod di sini..."></textarea>
+                <textarea 
+                    id="code-editor" 
+                    spellcheck="false" 
+                    autocomplete="off" 
+                    autocorrect="off" 
+                    autocapitalize="off" 
+                    placeholder="/* Masukkan kod HTML/CSS anda di sini... */">
+                </textarea>
             </div>
         </section>
 
         <section class="preview-pane">
             <header class="preview-header">
-                <span>PREVIEW</span>
+                <div class="preview-title">
+                    <span class="dot"></span>
+                    <span>LIVE PREVIEW</span>
+                </div>
                 <div class="device-toggles">
-                    <button class="active">🖥️</button>
-                    <button>📱</button>
+                    <button class="active" title="Desktop View">🖥️</button>
+                    <button title="Mobile View">📱</button>
                 </div>
             </header>
+            
             <div class="iframe-wrapper">
-                <iframe id="output-frame"></iframe>
+                <iframe id="output-frame" title="Development Preview"></iframe>
             </div>
         </section>
     </main>
 
     <footer class="status-bar">
         <div class="left-metrics">
-            <span>Ln 1, Col 1</span>
+            <span id="cursor-pos">Ln 1, Col 1</span>
+            <span class="separator">|</span>
             <span>UTF-8</span>
+            <span class="separator">|</span>
+            <span id="sync-status">Saved</span>
         </div>
+        
         <div class="right-metrics">
-            <span>AI: OFFLINE (Ollama)</span>
+            <span class="ai-status">
+                <span class="status-dot online"></span>
+                AI: LOCAL (Ollama)
+            </span>
             <span class="badge">PRO</span>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 
 </body>
 </html>
